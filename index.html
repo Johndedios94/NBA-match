@@ -2,94 +2,100 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </head>
   <body>
     <header>
-      <h1>LFZ Memory Match</h1>
+      <h1>NBA Memory Match</h1>
     </header>
     <aside>
       <h1>Stats</h1>
       <div>Games played</div>
-      <div>0</div>
+      <div id=GamesPlayedCount>0</div>
       <div>Attemps</div>
-      <div>0</div>
+      <div id = attemptCount>0</div>
       <div>Accuracy</div>
-      <div>0%</div>
+      <div id="AccuracyCount">0%</div>
     </aside>
     <main>
       <div class = 'container'>
-        <div>
-          <div class = "front"></div>
+        <div class = 'cards'>
+          <div  class = "front Russel"></div>
           <div class = "back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class = 'cards'>
+          <div class="front Steph"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Russel"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Steph"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Lebron"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Harden"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Lebron"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Harden"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Davis"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Giannis"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Davis"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Giannis"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front zion"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front kawhi"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front zion"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front kawhi"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Kd"></div>
           <div class="back"></div>
         </div>
-        <div>
-          <div class="front"></div>
+        <div class ="cards">
+          <div class="front Kd"></div>
           <div class="back"></div>
         </div>
+      </div>
+      <div class = "modal hidden">
+        YOU WON!<br>
+        <button id = "Button"> Reset Game</button>
       </div>
     </main>
   </body>

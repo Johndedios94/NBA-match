@@ -1,38 +1,46 @@
 body{
   background-color: tan;
   position: relative;
+  background-image: url("../images/nbawallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header{
-  outline: 1px solid black;
+
   text-align: center;
-  background-color: tan;
+  background-color: transparent;
   height: 20vh;
-  line-height: 80px;
+  line-height: 250px;
+  font-size: 50px;
+  text-shadow: 5px 5px white;
+
+
 }
 
 aside{
-  outline: 1px solid black;
   display: inline-block;
   text-align: center;
-  background-color: tan;
+  background-color: transparent;
   width: 25vh;
-  margin-top: 2%
+  margin-top: 2%;
+  font-size: 30px;
 
 }
 
 aside > div{
-  outline: 1px solid black;
   display: inline-block;
-  background-color: lightblue;
-  height: 10vh;
-  width: 9vw;
+  background-color: silver;
+  height: 8vh;
+  width: 7vw;
   text-align: center;
-  justify-content: center;
   margin-left: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
   line-height: 100%;
+  font-size: 20px;
+
+  color: black;
 
 }
 
@@ -40,29 +48,122 @@ main{
   display: inline-block;
   height: 80vh;
   width: 80vw;
-  display: inline-block;
-  outline: 1px solid black;
-  background-color: tan;
+  background-color: transparent;
   margin-top: 2%;
   vertical-align: top;
 }
 .container{
-  background-color: tan;
+  background-color: transparent;
   vertical-align: top;
-  height: 80vh;
-  width: 80vw;
-  margin-top: 5%;
-  margin-left: 5%;
+  height: 100%;
+  width: 100%;
+  margin-top: 0%;
+  margin-left: 0%;
 
 }
 
 
-main > div > div{
-  background-color: black;
-  height: 25vh;
-  width: 12vw;
+.cards {
+  height: 27%;
+  width: 15%;
   display: inline-block;
   margin: auto;
+  position: relative;
+  top: 8%;
+  left: 5%;
+}
 
+
+ .back, .front {
+  background-size: cover;
+  background-position:  center;
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 25px;
+}
+
+
+.modal{
+  height: 31%;
+  width: 30%;
+  background-color: white;
+  position: fixed;
+  padding-top: 100px;
+  /* bottom: 45%; */
+  /* left: 40%; */
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  border-radius: 25px;
+  background-image: url("../images/Shaquille-ONeal-Headshot.jpg");
+  background-size: cover;
+  background-position: center;
+  text-shadow: 3px 5px black;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 4.8;
+
+
+}
+
+#Button {
+  background-color: black;
+  border-radius: 25px;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 25px;
+}
+
+.back{
+  background-image: url('../images/nbalogo.jpg');
+}
+
+
+.Russel{
+  background-image: url("../images/RusswelWest.png")
+}
+
+.Steph{
+  background-image:url("../images/stephCurry.png")
+}
+
+.Lebron{
+  background-image: url("../images/lebronJames.png")
+}
+
+.Harden{
+  background-image: url("../images/Jamesharden.png")
+}
+/* .frontTj{
+  background-image: url("../images/tj.jpg")
+} */
+.Davis{
+  background-image:  url("../images/AnthonyDavis.png")
+}
+
+.Giannis{
+  background-image: url("../images/Giannis.png")
+}
+
+.zion{
+  background-image: url("../images/zion.png")
+}
+
+.kawhi{
+  background-image: url("../images/kawhi.png")
+}
+
+.Kd{
+  background-image: url("../images/kevindurant.png")
+}
+
+.unclickable{
+  pointer-events: none;
+}
+.hidden {
+  display: none;
 
 }
