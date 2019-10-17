@@ -8,7 +8,7 @@ var max_matches = 9;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
-
+var clickable = false;
 
 
 function intializeApp() {
@@ -23,14 +23,18 @@ function Reset() {
 }
 
 function handleCardClick(event){
+  if(clickable){
+    return
+  }
   $(event.currentTarget).find(".back").addClass("hidden");
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget);
-    $(firstCardClicked).css("pointer-events", "none")
-    $().off()
+    $(firstCardClicked).off("click", handleCardClick)
     console.log("firstcard")
   } else{
+    // debugger;
     secondCardClicked = $(event.currentTarget);
+    $(secondCardClicked).off("click",  handleCardClick);
     console.log("secondCard")//checks if both cards match
     if($(firstCardClicked).find('.front').css('background-image')===
       $(secondCardClicked).find('.front').css('background-image')){
@@ -39,10 +43,14 @@ function handleCardClick(event){
       matches++//increases matches
       attempts++;//increases attempts
       console.log("You have matched: ", matches)
-      $(firstCardClicked).css("pointer-events", "none")
-      $(secondCardClicked).css("pointer-events", "none")
+      // $(".cards").on("click", handleCardClick);
+      // $(".cards").off("click", ".front", handleCardClick);
+      // $(".front").css("pointer-events", "none")
+      // $(firstCardClicked).css("pointer-events", "none")
+      // $(secondCardClicked).css("pointer-events", "none")
       firstCardClicked = null;//resets cards to null
       secondCardClicked = null;
+      // clickable = false;
 
       if (matches === max_matches){
         $(".modal").removeClass("hidden")
@@ -54,12 +62,20 @@ function handleCardClick(event){
 
 
       } else{
+        clickable = true;
+      // $(".back").off("click", handleCardClick)
         setTimeout(function(){
           $(firstCardClicked).find(".back").removeClass('hidden');
           $(secondCardClicked).find(".back").removeClass('hidden');
-          $(firstCardClicked).css("pointer-events", "auto")
+          // $(".cards").on("click", handleCardClick)
+          $(firstCardClicked).on("click", handleCardClick);
+          $(secondCardClicked).on("click", handleCardClick);
+          // $(".cards").css("pointer-events", "auto")
+          // $(".front").css("pointer-events", "none")
+          // $(".cards").on("click", handleCardClick)
           firstCardClicked = null;//resets cards to null
           secondCardClicked = null;
+          clickable = false;
         }, 1000);
           attempts++
       }
