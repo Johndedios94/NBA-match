@@ -4,7 +4,7 @@ $(document).ready(intializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
@@ -12,17 +12,21 @@ var clickable = false;
 // var images = ["RusswelWest.png", "stephCurry.png", "lebronJames.png", "Jamesharden.png", "AnthonyDavis.png", "Giannis.png", "zion.png", "kawhi.png", "kevindurant.png",
 //   "RusswelWest.png", "stephCurry.png", "lebronJames.png", "Jamesharden.png", "AnthonyDavis.png", "Giannis.png", "zion.png", "kawhi.png", "kevindurant.png"
 // ]
-var imageClasses = ["Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd", "Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd"
-]
+// var imageClasses = ["Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd", "Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd"
+// ]
 var randomImages = [];
 
 function intializeApp() {
  console.log("Initializing App...")
   randomizeCards();
+  // generateCards();
   $(".cards" ).on("click", handleCardClick)
 }
 
 function randomizeCards(){
+  var imageClasses = ["Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd", "Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd"
+  ]
+  debugger;
   for(var i = (imageClasses.length-1); i >= 0; i--){
   var randomIndex = Math.floor(Math.random() * (imageClasses.length))
   var player = imageClasses[randomIndex];
@@ -44,11 +48,14 @@ function generateCards(){
 }
 
 function Reset() {
+  $(".gamezone").empty();
   $(".modal").addClass("hidden")
-  $('.back').removeClass("hidden")
-  $(".cards").on("click", handleCardClick)
-  firstCardClicked = null;
-  secondCardClicked = null;
+  randomImages=[];
+  // $('.back').removeClass("hidden")
+  // $(".cards").on("click", handleCardClick)
+  // firstCardClicked = null;
+  // secondCardClicked = null;
+  intializeApp();
 }
 
 function handleCardClick(event){
