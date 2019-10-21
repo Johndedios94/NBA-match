@@ -1,70 +1,76 @@
-body{
-  background-color: tan;
+html{
   position: relative;
-  background-image: url("../images/nbawallpaper.jpg");
-  background-repeat: no-repeat;
+  background-image: url("../images/mmbackground.jpg");
   background-size: cover;
+  min-height: 100%;
 }
 
-header{
-
+.name{
   text-align: center;
   background-color: transparent;
-  height: 20vh;
-  line-height: 250px;
-  font-size: 50px;
-  text-shadow: 5px 5px white;
 
-
+  font-size:5rem;
+  color: white;
+  text-decoration: underline blue ;
 }
 
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 5vh;
+  width: 50vw;
+  background-color: white;
+  margin-left: 23%;
+  margin-bottom: 2%;
+  text-align: center;
+  border: 3px solid blue;
+  border-radius: 1px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1rem;
+}
+
+
 aside{
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   text-align: center;
   background-color: transparent;
   width: 25vh;
   margin-top: 2%;
-  font-size: 30px;
 
 }
 
 aside > div{
   display: inline-block;
   background-color: silver;
-  height: 8vh;
+  height: 5vh;
   width: 7vw;
   text-align: center;
   margin-left: 5%;
   margin-top: 5%;
   margin-bottom: 5%;
   line-height: 100%;
-  font-size: 20px;
-
+  font-size: 1rem;
   color: black;
 
 }
 
-main{
-  display: inline-block;
-  height: 80vh;
-  width: 80vw;
-  background-color: transparent;
-  margin-top: 2%;
-  vertical-align: top;
-}
-
 .gamezone{
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 84%;
+  margin-left: 8%;
+  height: 80vh;
 }
 .container{
   background-color: transparent;
   vertical-align: top;
-  height: 15%;
-  width: 17%;
+  height: 24%;
+  width: 15%;
   margin-top: 0%;
-  margin-left: 0%;
+  margin-left: 1%;
 }
 
 .images{
@@ -91,6 +97,7 @@ main{
   height: 100%;
   width: 100%;
   position: absolute;
+  border: 5px solid blue;
   border-radius: 25px;
 }
 
@@ -98,30 +105,31 @@ main{
 .modal{
   height: 31%;
   width: 30%;
-  background-color: white;
   position: fixed;
   padding-top: 100px;
-  /* bottom: 45%; */
-  /* left: 40%; */
   text-align: center;
-  font-size: 50px;
-  color: white;
+  font-size: 2rem;;
+  color: black;
   border-radius: 25px;
   background-image: url("../images/Shaquille-ONeal-Headshot.jpg");
   background-size: cover;
   background-position: center;
-  text-shadow: 3px 5px black;
+  /* text-shadow: 3px 5px black; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  line-height: 4.8;
+  /* line-height: 4.8; */
+  border: 1px solid black;
 
+}
 
+.modaltext{
+  margin-bottom: 37%;
 }
 
 #Button {
   background-color: black;
-  border-radius: 25px;
+  /* border-radius: 25px; */
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 25px;
@@ -171,7 +179,196 @@ main{
 .unclickable{
   pointer-events: none;
 }
-.hidden {
+/* .hidden {
   display: none;
 
-}
+} */
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait)
+   {
+    html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .gamezone{
+      height: 79vh;
+      width: 90%;
+      margin-left: 4%;
+    }
+    .container{
+      height: 14%;
+      width: 32%;
+    }
+    .stats{
+      font-size: 2rem;
+      margin-left: 17%;
+      height: 6vh;
+      width: 64vw;
+      margin-top: 3%;
+    }
+    .name{
+      height: 7vh;
+    }
+    .back, .front{
+      border: blue 1px solid
+    }
+
+    .modal{
+      font-size: 4.5rem;
+      width: 90%
+    }
+    .modaltext{
+      margin-bottom: 42%;
+    }
+    #Button{
+      border-radius: 10px;
+      font-size: 4.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+   html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .gamezone{
+      height: 79vh;
+      margin-top: 4%
+    }
+    .container{
+      height: 25%;
+      width: 15%;
+    }
+    .stats{
+      font-size: 1rem;
+      margin-left: 17%;
+      height: 7vh;
+      width: 64vw;
+    }
+    .name{
+      font-size: 3rem;
+      height: 3vh;
+    }
+    .back, .front{
+      border: blue 1px solid
+    }
+
+     .modal{
+       height: 36%;
+      width: 42%;
+      font-size: 2.5rem;
+    }
+
+    .modaltext{
+      margin-bottom: 24%;
+    }
+
+    #Button{
+      border-radius: 10px;
+      font-size: 2.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+     html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .container{
+      height: 15%;
+      width: 32%;
+    }
+     .back, .front{
+      border: blue .5px solid
+    }
+
+    .name{
+      height: 8vh;
+    }
+
+    .stats{
+      width: 64vw;
+      font-size: 1.5rem;
+      margin-top: 2%;
+      margin-left: 17%;
+    }
+
+    .modal{
+      width: 68%;
+      font-size: 3.5rem;
+    }
+      .modaltext{
+      margin-bottom: 40%;
+    }
+
+    #Button{
+      font-size: 3.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .container{
+      height: 25%;
+      width: 15%;
+    }
+     .back, .front{
+      border: blue .5px solid
+    }
+
+    .name{
+      height: 8vh;
+    }
+
+    .stats{
+      width: 64vw;
+      font-size: 1.5rem;
+      margin-top: 2%;
+      margin-left: 17%;
+    }
+
+    .gamezone{
+      margin-top: 3%;
+      width: 100%;
+      margin-left: 0%;
+    }
+     .stats{
+       margin-top: -2%;
+       width: 64vw;
+       height: 8vh;
+     }
+
+     .modal{
+       font-size: 2.5rem;
+       width: 56%;
+     }
+
+    .modaltext{
+      margin-bottom: 24%;
+    }
+     #Button{
+       font-size: 2.5rem;
+     }
+
+  }

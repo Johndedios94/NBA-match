@@ -26,7 +26,6 @@ function intializeApp() {
 function randomizeCards(){
   var imageClasses = ["Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd", "Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd"
   ]
-  debugger;
   for(var i = (imageClasses.length-1); i >= 0; i--){
   var randomIndex = Math.floor(Math.random() * (imageClasses.length))
   var player = imageClasses[randomIndex];
@@ -56,6 +55,7 @@ function Reset() {
   // firstCardClicked = null;
   // secondCardClicked = null;
   intializeApp();
+  clickable = false;
 }
 
 function handleCardClick(event){
@@ -84,6 +84,7 @@ function handleCardClick(event){
       secondCardClicked = null;
 
       if (matches === max_matches){
+        clickable = true;
         $(".modal").removeClass("hidden")
         var theButton = $("#Button")
         theButton.on("click", Reset);
@@ -114,8 +115,12 @@ function handleCardClick(event){
 }
 
 function calculateAccuracy(){
-  accuracy = ((matches/attempts)*100).toFixed(0) + "%";
-  return accuracy
+  // debugger;
+  accuracy = ((matches/attempts)*100).toFixed(0);
+  if(isNaN(accuracy)){
+    accuracy = "0%";
+  }
+  return (accuracy + "%")
 }
 
 
