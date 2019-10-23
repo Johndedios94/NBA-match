@@ -8,10 +8,9 @@ html{
 .name{
   text-align: center;
   background-color: transparent;
-
   font-size:5rem;
   color: white;
-  text-decoration: underline blue ;
+  text-decoration: underline green ;
 }
 
 .stats{
@@ -109,11 +108,11 @@ aside > div{
   padding-top: 100px;
   text-align: center;
   font-size: 2rem;;
-  color: black;
+  background-color: white;
   border-radius: 25px;
-  background-image: url("../images/Shaquille-ONeal-Headshot.jpg");
-  background-size: cover;
-  background-position: center;
+  /* background-image: url("../images/Shaquille-ONeal-Headshot.jpg"); */
+  /* background-size: cover;
+  background-position: center; */
   /* text-shadow: 3px 5px black; */
   left: 50%;
   top: 50%;
@@ -179,10 +178,10 @@ aside > div{
 .unclickable{
   pointer-events: none;
 }
-/* .hidden {
+.hidden {
   display: none;
 
-} */
+}
 
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait */
@@ -223,6 +222,7 @@ aside > div{
       font-size: 4.5rem;
       width: 90%
     }
+
     .modaltext{
       margin-bottom: 42%;
     }

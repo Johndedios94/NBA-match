@@ -12,8 +12,10 @@
     <main class="gamezone">
     </main>
       <div class="modal hidden">
-        <div class="modaltext"></div>
-        YOU WON!<br>
+      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+      Name: <input type="text" name="fname">
+      <input type="submit" value="Submit">
+      </form>
         <button id="Button"> Reset Game</button>
         </div>
       </div>

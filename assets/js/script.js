@@ -9,17 +9,12 @@ var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
 var clickable = false;
-// var images = ["RusswelWest.png", "stephCurry.png", "lebronJames.png", "Jamesharden.png", "AnthonyDavis.png", "Giannis.png", "zion.png", "kawhi.png", "kevindurant.png",
-//   "RusswelWest.png", "stephCurry.png", "lebronJames.png", "Jamesharden.png", "AnthonyDavis.png", "Giannis.png", "zion.png", "kawhi.png", "kevindurant.png"
-// ]
-// var imageClasses = ["Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd", "Russel", "Steph", "Lebron", "Harden", "Davis", "Giannis", "zion", "kawhi", "Kd"
-// ]
+
 var randomImages = [];
 
 function intializeApp() {
  console.log("Initializing App...")
   randomizeCards();
-  // generateCards();
   $(".cards" ).on("click", handleCardClick)
 }
 
@@ -50,12 +45,10 @@ function Reset() {
   $(".gamezone").empty();
   $(".modal").addClass("hidden")
   randomImages=[];
-  // $('.back').removeClass("hidden")
-  // $(".cards").on("click", handleCardClick)
-  // firstCardClicked = null;
-  // secondCardClicked = null;
   intializeApp();
   clickable = false;
+
+
 }
 
 function handleCardClick(event){
@@ -67,7 +60,7 @@ function handleCardClick(event){
   if (firstCardClicked === null){
     firstCardClicked = $(event.currentTarget)
     $(firstCardClicked).off("click", handleCardClick)
-    console.log("firstcard", firstCardClicked)
+    console.log("firstcard yooo", firstCardClicked)
   } else{
     // debugger;
     secondCardClicked = $(event.currentTarget);
@@ -90,7 +83,19 @@ function handleCardClick(event){
         theButton.on("click", Reset);
         resetStats();
         console.log("gamesplayed", gameCount);
+        debugger;
+
+        var scores = {
+          datatype: "json",
+          url: "server/public/api/getHighScores.php",
+          success: function (response) {
+            console.log("response is ", response);
+          }
+        };
+        $.ajax(scores);
+
       }
+
 
 
       } else{
@@ -132,6 +137,7 @@ function displayStats (){
 }
 
 function resetStats(){
+
   matches = null;
   attempts = null;
   gameCount++
