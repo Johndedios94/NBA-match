@@ -12,11 +12,14 @@
     <main class="gamezone">
     </main>
       <div class="modal hidden">
+        <div>YOU WON!</div>
+        <div>Enter you name to submit your score!</div>
       <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-      Name: <input type="text" name="fname">
-      <input type="submit" value="Submit">
+      Name: <input id="userName" type="text" name="fname">
+      <button id="enterScore" type="button">Submit</button>
+      <!-- <input id="enterScore" type="button" value="Submit"> -->
       </form>
-        <button id="Button"> Reset Game</button>
+        <!-- <button id="Button"> Reset Game</button> -->
         </div>
       </div>
       <div class="stats">

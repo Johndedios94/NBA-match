@@ -79,25 +79,13 @@ function handleCardClick(event){
       if (matches === max_matches){
         clickable = true;
         $(".modal").removeClass("hidden")
-        var theButton = $("#Button")
-        theButton.on("click", Reset);
-        resetStats();
+        $("#enterScore").on("click", submitScore)
+
+        var theButton = $("#Button")////will be displayed after user has entered info
+        // theButton.on("click", Reset)
+        // resetStats();
         console.log("gamesplayed", gameCount);
-        debugger;
-
-        var scores = {
-          datatype: "json",
-          url: "server/public/api/getHighScores.php",
-          success: function (response) {
-            console.log("response is ", response);
-          }
-        };
-        $.ajax(scores);
-
       }
-
-
-
       } else{
         clickable = true;
         setTimeout(function(){
@@ -120,7 +108,6 @@ function handleCardClick(event){
 }
 
 function calculateAccuracy(){
-  // debugger;
   accuracy = ((matches/attempts)*100).toFixed(0);
   if(isNaN(accuracy)){
     accuracy = "0%";
@@ -137,8 +124,44 @@ function displayStats (){
 }
 
 function resetStats(){
-
   matches = null;
   attempts = null;
   gameCount++
+}
+
+function submitScore(){
+  var score = $("#attemptCount").text()
+  var name = $("#userName").val();
+  console.log("the name is ", name)
+  console.log("attempts are", $("#attemptCount").text())
+  var highScoreData = {
+    "name" : name,
+    "score" : score
+    }
+
+  console.log("score data is ", highScoreData);
+  var scoreData =[];
+  scoreData.push($.post("server/public/api/addScore.php", JSON.stringify(highScoreData)));
+  Promise.allSettled(scoreData).then(getScores());
+  // getScores();
+}
+
+function getScores(){
+  $.get("server/public/api/getHighScores.php", function (data) {
+    console.log(data.length)
+    $(".modal").empty();
+
+
+    var scoreContainer = $("<ol>").css({"display":"flex" , "align-items":"flex-start", "flex-direction" : "column"});
+    var spacing = ({ "justify-content": "space-evenly"})
+    for(var i = 0; i < data.length; i++){
+      var listScores = $("<li>").css(spacing);
+      var name = data[i].name;
+      var score = data[i].score;
+      listScores.text("name: " + name + " " + "score: " + score)
+      $(scoreContainer).append(listScores)
+    }
+    $(".modal").css({ "padding-top": "0px", "text-align":"center" }).text("TOP TEN SCORES:")
+    $(".modal").append(scoreContainer)
+  });
 }

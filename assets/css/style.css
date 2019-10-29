@@ -10,7 +10,7 @@ html{
   background-color: transparent;
   font-size:5rem;
   color: white;
-  text-decoration: underline green ;
+  text-decoration: underline blue ;
 }
 
 .stats{
@@ -108,7 +108,7 @@ aside > div{
   padding-top: 100px;
   text-align: center;
   font-size: 2rem;;
-  background-color: white;
+  background-color: grey;
   border-radius: 25px;
   /* background-image: url("../images/Shaquille-ONeal-Headshot.jpg"); */
   /* background-size: cover;
@@ -132,6 +132,10 @@ aside > div{
   font-family: 'Times New Roman', Times, serif;
   color: white;
   font-size: 25px;
+}
+
+#enterScore{
+  border: 1px solid black;
 }
 
 .back{
