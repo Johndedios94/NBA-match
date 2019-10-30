@@ -42,6 +42,10 @@ function generateCards(){
 }
 
 function Reset() {
+  matches = null;
+  attempts = null;
+  gameCount++
+  displayStats()
   $(".gamezone").empty();
   $(".modal").addClass("hidden")
   randomImages=[];
@@ -110,7 +114,7 @@ function handleCardClick(event){
 function calculateAccuracy(){
   accuracy = ((matches/attempts)*100).toFixed(0);
   if(isNaN(accuracy)){
-    accuracy = "0%";
+    accuracy = "0";
   }
   return (accuracy + "%")
 }
@@ -142,7 +146,7 @@ function submitScore(){
   console.log("score data is ", highScoreData);
   var scoreData =[];
   scoreData.push($.post("server/public/api/addScore.php", JSON.stringify(highScoreData)));
-  Promise.allSettled(scoreData).then(getScores());
+  Promise.allSettled(scoreData).then(getScores);
   // getScores();
 }
 
@@ -150,18 +154,57 @@ function getScores(){
   $.get("server/public/api/getHighScores.php", function (data) {
     console.log(data.length)
     $(".modal").empty();
+    var scoreTable =  $("<table>");
+    var tableRow = $("<tr>")
+    var rank = $("<th>").text("Rank");
+    var name = $("<th>").text("Name");
+    var score = $("<th>").text("Score");
+    $(tableRow).append(rank, name, score);
+    $(scoreTable).append(tableRow);
+    var currentRank = 1;
+    var dataRow = null;
+    var playAgain = $("<button>").text("Play Again").on("click", Reset).addClass("playAgain");
 
-
-    var scoreContainer = $("<ol>").css({"display":"flex" , "align-items":"flex-start", "flex-direction" : "column"});
-    var spacing = ({ "justify-content": "space-evenly"})
     for(var i = 0; i < data.length; i++){
-      var listScores = $("<li>").css(spacing);
-      var name = data[i].name;
-      var score = data[i].score;
-      listScores.text("name: " + name + " " + "score: " + score)
-      $(scoreContainer).append(listScores)
+      var dataRank = $("<td>").text(currentRank);
+      var dataName = $("<td>").text(data[i].name);
+      var dataScore = $("<td>").text(data[i].score);
+      dataRow = $("<tr>").append(dataRank, dataName, dataScore);
+      currentRank++
+      $(scoreTable).append(dataRow);
     }
-    $(".modal").css({ "padding-top": "0px", "text-align":"center" }).text("TOP TEN SCORES:")
-    $(".modal").append(scoreContainer)
+    $(".modal").css({ "padding-top": "0px", "text-align": "center" , "font-family": "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande'" }).text("TOP FIVE SCORES:")
+    $(".modal").append(scoreTable, playAgain);
+
   });
 }
+
+
+
+
+
+// var rankTable = $("<table>")
+// var thRank = $('<th>').text("Rank")
+// var thName = $("<th>").text("Name")
+// var thTime = $("<th>").text("Attempts")
+// var trTableTitle = $('<tr>').append(thRank, thName, thTime, thAccuracy);
+// var numText = "";
+// var trRows = ("<tr>");
+// var tdRow = $("<td>")
+// var currentRank = 1;
+// rankTable.append(trTableTitle)
+// //loop over each high score entry
+// for (var i = 0; i < data.length; i++) {
+//   var rankTd = $("<td>").text(currentRank)
+//   var tdNameResult = $("<td>").text(data[i].name)
+//   var tdTimeResult = $("<td>").text(data[i].time)
+//   var trResult = $("<tr>").append(rankTd, tdNameResult, tdTimeResult, tdAccuracyResult);
+//   rankTable.append(trResult);
+//   currentRank++;
+// }
+// //end loop
+// var divRow = $("<div>").addClass("rowUserResult");
+// var divCol1 = $("<div>").text("Name: " + username.val()).addClass("columnUserResult");
+// var divCol2 = $("<div>").text("Time: " + timer).addClass("columnUserResult");
+// var divCol3 = $("<div>").text("Accuracy: " + accuracyTotal + " %").addClass("columnUserResult");
+// divRow.append(divCol1, divCol2, divCol3);

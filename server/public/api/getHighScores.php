@@ -5,7 +5,7 @@ set_exception_handler('error_handling');
 require_once('dbconnection.php');
 startup();
 
-$query= "SELECT name, score FROM `highScores` ORDER BY score ASC LIMIT 10";
+$query= "SELECT name, score FROM `highScores` ORDER BY score ASC LIMIT 5";
 $result =  mysqli_query($conn, $query);
 
 

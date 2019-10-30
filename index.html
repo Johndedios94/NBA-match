@@ -12,13 +12,15 @@
     <main class="gamezone">
     </main>
       <div class="modal hidden">
-        <div>YOU WON!</div>
-        <div>Enter you name to submit your score!</div>
+        <div class="winningModal">
+        <h1>YOU WON!</h1>
+        <div>Submit your score!</div>
       <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
       Name: <input id="userName" type="text" name="fname">
       <button id="enterScore" type="button">Submit</button>
       <!-- <input id="enterScore" type="button" value="Submit"> -->
       </form>
+      </div>
         <!-- <button id="Button"> Reset Game</button> -->
         </div>
       </div>
@@ -29,11 +31,11 @@
         </div>
         <div>
           Attempts:
-            <div id="attemptCount">0</div>
+            <div id="attemptCount"></div>
         </div>
         <div>
           Accuracy:
-            <div id="AccuracyCount">0</div>
+            <div id="AccuracyCount"></div>
         </div>
       </div>
   </body>

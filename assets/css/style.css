@@ -1,8 +1,9 @@
 html{
   position: relative;
-  background-image: url("../images/mmbackground.jpg");
+  background-image: url("../images/hardwood.jpg");
   background-size: cover;
-  min-height: 100%;
+  /* min-height: 100%; */
+  background-repeat: no-repeat;
 }
 
 .name{
@@ -11,13 +12,15 @@ html{
   font-size:5rem;
   color: white;
   text-decoration: underline blue ;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px black;
 }
 
 .stats{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  height: 5vh;
+  /* height: 5.5vh; */
   width: 50vw;
   background-color: white;
   margin-left: 23%;
@@ -26,10 +29,13 @@ html{
   border: 3px solid blue;
   border-radius: 1px;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-size: 1rem;
+  font-size: 1em;
 }
 
-
+h1{
+  font-size: 1em;
+  text-decoration: underline;
+}
 aside{
   display: inline-flex;
   flex-direction: column;
@@ -92,38 +98,42 @@ aside > div{
  .back, .front {
   background-size: cover;
   background-position:  center;
-  background-color: black;
+  background-color: white;
   height: 100%;
   width: 100%;
   position: absolute;
-  border: 5px solid blue;
+  border: 3px solid blue;
   border-radius: 25px;
 }
 
 
 .modal{
-  height: 31%;
+  /* height: 40%; */
   width: 30%;
   position: fixed;
   padding-top: 100px;
   text-align: center;
-  font-size: 2rem;;
-  background-color: grey;
+  font-size: 2rem;
   border-radius: 25px;
-  /* background-image: url("../images/Shaquille-ONeal-Headshot.jpg"); */
-  /* background-size: cover;
-  background-position: center; */
+  background-color: white;
+  background-image: url("../images/trophy.gif");
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
   /* text-shadow: 3px 5px black; */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   /* line-height: 4.8; */
-  border: 1px solid black;
+  border: 1px solid blue;
+  padding-top: 0
 
 }
 
-.modaltext{
-  margin-bottom: 37%;
+.winningModal{
+  background-color:rgba(255, 255, 255, 0.5);
+  margin-bottom: 10%;
+  font-family: "Lucida sans";
 }
 
 #Button {
@@ -187,6 +197,33 @@ aside > div{
 
 }
 
+th {
+  text-decoration: underline
+}
+
+table{
+  background-color:rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande'
+}
+
+input{
+  background-color: grey;
+}
+
+.playAgain, .enterScore{
+  border: 1px solid black;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  margin-top: 2%;
+}
+
+.enterScore{
+  margin-top: 0%;
+}
+
 /* ----------- iPhone 6, 6S, 7 and 8 ----------- */
 /* Portrait */
 @media only screen
@@ -211,7 +248,7 @@ aside > div{
     .stats{
       font-size: 2rem;
       margin-left: 17%;
-      height: 6vh;
+      /* height: 6vh; */
       width: 64vw;
       margin-top: 3%;
     }
@@ -256,7 +293,7 @@ aside > div{
     .stats{
       font-size: 1rem;
       margin-left: 17%;
-      height: 7vh;
+      /* height: 7vh; */
       width: 64vw;
     }
     .name{
@@ -268,7 +305,7 @@ aside > div{
     }
 
      .modal{
-       height: 36%;
+       /* height: 36%; */
       width: 42%;
       font-size: 2.5rem;
     }
@@ -348,7 +385,7 @@ aside > div{
     .stats{
       width: 64vw;
       font-size: 1.5rem;
-      margin-top: 2%;
+      margin-top: -2%;
       margin-left: 17%;
     }
 
@@ -357,11 +394,11 @@ aside > div{
       width: 100%;
       margin-left: 0%;
     }
-     .stats{
+     /* .stats{
        margin-top: -2%;
        width: 64vw;
        height: 8vh;
-     }
+     } */
 
      .modal{
        font-size: 2.5rem;
