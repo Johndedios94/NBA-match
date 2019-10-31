@@ -136,18 +136,14 @@ function resetStats(){
 function submitScore(){
   var score = $("#attemptCount").text()
   var name = $("#userName").val();
-  console.log("the name is ", name)
-  console.log("attempts are", $("#attemptCount").text())
   var highScoreData = {
     "name" : name,
     "score" : score
     }
-
-  console.log("score data is ", highScoreData);
   var scoreData =[];
   scoreData.push($.post("server/public/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
-  // getScores();
+
 }
 
 function getScores(){
