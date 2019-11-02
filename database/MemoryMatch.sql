@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 31, 2019 at 10:57 PM
+-- Generation Time: Nov 02, 2019 at 01:46 AM
 -- Server version: 5.7.27-0ubuntu0.18.04.1
 -- PHP Version: 7.2.19-0ubuntu0.18.04.1
 
@@ -39,7 +39,8 @@ CREATE TABLE `highScores` (
 INSERT INTO `highScores` (`id`, `name`, `score`) VALUES
 (49, 'giannis', 2),
 (50, 'ad', 2),
-(51, 'Claw', 5);
+(51, 'Claw', 5),
+(73, 'john', 4);
 
 --
 -- Indexes for dumped tables
@@ -59,7 +60,7 @@ ALTER TABLE `highScores`
 -- AUTO_INCREMENT for table `highScores`
 --
 ALTER TABLE `highScores`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
