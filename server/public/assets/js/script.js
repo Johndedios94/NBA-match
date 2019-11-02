@@ -141,13 +141,12 @@ function submitScore(){
     "score" : score
     }
   var scoreData =[];
-  scoreData.push($.post("server/public/api/addScore.php", JSON.stringify(highScoreData)));
+  scoreData.push($.post("/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
-
 }
 
 function getScores(){
-  $.get("server/public/api/getHighScores.php", function (data) {
+  $.get("memory_match/server/public/api/getHighScores.php", function (data) {
     console.log(data.length)
     $(".modal").empty();
     var scoreTable =  $("<table>");
