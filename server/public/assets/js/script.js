@@ -82,7 +82,7 @@ function handleCardClick(event){
 
       if (matches === max_matches){
         clickable = true;
-        $(".modal").removeClass("hidden")
+        $("#submitScoreModal").removeClass("hidden")
         $("#enterScore").on("click", submitScore)
 
         var theButton = $("#Button")////will be displayed after user has entered info
@@ -141,14 +141,16 @@ function submitScore(){
     "score" : score
     }
   var scoreData =[];
-  scoreData.push($.post("/api/addScore.php", JSON.stringify(highScoreData)));
+  scoreData.push($.post("../public/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
 }
 
 function getScores(){
-  $.get("memory_match/server/public/api/getHighScores.php", function (data) {
+  $.get("../public/api/getHighScores.php", function (data) {
+    debugger;
     console.log(data.length)
-    $(".modal").empty();
+    $("#submitScoreModal").addClass("hidden");
+    $("#highScoreModal").removeClass("hidden");
     var scoreTable =  $("<table>");
     var tableRow = $("<tr>")
     var rank = $("<th>").text("Rank");
@@ -168,8 +170,8 @@ function getScores(){
       currentRank++
       $(scoreTable).append(dataRow);
     }
-    $(".modal").css({ "padding-top": "0px", "text-align": "center" , "font-family": "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande'" }).text("TOP FIVE SCORES:")
-    $(".modal").append(scoreTable, playAgain);
+    $("#highScoreModal").css({ "padding-top": "0px", "text-align": "center" , "font-family": "'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande'" }).text("TOP FIVE SCORES:")
+    $("#highScoreModal").append(scoreTable, playAgain);
 
   });
 }

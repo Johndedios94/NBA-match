@@ -11,18 +11,22 @@
     </header>
     <main class="gamezone">
     </main>
-      <div class="modal hidden">
+    <!--Enter Score Modal-->
+      <div id="submitScoreModal" class="modal hidden">
         <div class="winningModal">
-        <h1>YOU WON!</h1>
-        <div>Submit your score!</div>
-      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-      Name: <input id="userName" type="text" name="fname">
-      <button id="enterScore" type="button">Submit</button>
+          <h1>YOU WON!</h1>
+          <div>Submit your score!</div>
+            <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+              Name: <input id="userName" type="text" name="fname">
+              <button id="enterScore" type="button">Submit</button>
       <!-- <input id="enterScore" type="button" value="Submit"> -->
-      </form>
-      </div>
+            </form>
+          </div>
         <!-- <button id="Button"> Reset Game</button> -->
         </div>
+      </div>
+      <!--Display HighScore Modal-->
+      <div id="highScoreModal" class="modal hidden">
       </div>
       <div class="stats">
         <div class="game">
