@@ -79,15 +79,11 @@ function handleCardClick(event){
       console.log("You have matched: ", matches)
       firstCardClicked = null;//resets cards to null
       secondCardClicked = null;
-
       if (matches === max_matches){
         clickable = true;
         $("#submitScoreModal").removeClass("hidden")
         $("#enterScore").on("click", submitScore)
-
-        var theButton = $("#Button")////will be displayed after user has entered info
-        // theButton.on("click", Reset)
-        // resetStats();
+        var theButton = $("#Button")
         console.log("gamesplayed", gameCount);
       }
       } else{
@@ -141,13 +137,12 @@ function submitScore(){
     "score" : score
     }
   var scoreData =[];
-  scoreData.push($.post("../public/api/addScore.php", JSON.stringify(highScoreData)));
+  scoreData.push($.post("/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
 }
 
 function getScores(){
-  $.get("../public/api/getHighScores.php", function (data) {
-    debugger;
+  $.get("/api/getHighScores.php", function (data) {
     console.log(data.length)
     $("#submitScoreModal").addClass("hidden");
     $("#highScoreModal").removeClass("hidden");
