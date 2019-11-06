@@ -1,0 +1,415 @@
+html{
+  position: relative;
+  background-image: url("../images/hardwood.jpg");
+  background-size: cover;
+  /* min-height: 100%; */
+  background-repeat: no-repeat;
+}
+
+.name{
+  text-align: center;
+  background-color: transparent;
+  font-size:5rem;
+  color: white;
+  text-decoration: underline blue ;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px black;
+}
+
+.stats{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* height: 5.5vh; */
+  width: 50vw;
+  background-color: white;
+  margin-left: 23%;
+  margin-bottom: 2%;
+  text-align: center;
+  border: 3px solid blue;
+  border-radius: 1px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 1em;
+}
+
+h1{
+  font-size: 1em;
+  text-decoration: underline;
+}
+aside{
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: transparent;
+  width: 25vh;
+  margin-top: 2%;
+
+}
+
+aside > div{
+  display: inline-block;
+  background-color: silver;
+  height: 5vh;
+  width: 7vw;
+  text-align: center;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  line-height: 100%;
+  font-size: 1rem;
+  color: black;
+
+}
+
+.gamezone{
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 84%;
+  margin-left: 8%;
+  height: 80vh;
+}
+.container{
+  background-color: transparent;
+  vertical-align: top;
+  height: 24%;
+  width: 15%;
+  margin-top: 0%;
+  margin-left: 1%;
+}
+
+.images{
+  width: 100%;
+  height: 100%;
+}
+
+
+.cards {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  margin: auto;
+  position: relative;
+  top: 8%;
+  left: 5%;
+}
+
+
+ .back, .front {
+  background-size: cover;
+  background-position:  center;
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border: 3px solid blue;
+  border-radius: 25px;
+}
+
+
+.modal{
+  /* height: 40%; */
+  width: 30%;
+  position: fixed;
+  padding-top: 100px;
+  text-align: center;
+  font-size: 2rem;
+  border-radius: 25px;
+  background-color: white;
+  background-image: url("../images/trophy.gif");
+  background-size: 20%;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* text-shadow: 3px 5px black; */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* line-height: 4.8; */
+  border: 1px solid blue;
+  padding-top: 0
+
+}
+
+.winningModal{
+  background-color:rgba(255, 255, 255, 0.5);
+  margin-bottom: 10%;
+  font-family: "Lucida sans";
+}
+
+#Button {
+  background-color: black;
+  /* border-radius: 25px; */
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  font-size: 25px;
+}
+
+#enterScore{
+  border: 1px solid black;
+}
+
+.back{
+  background-image: url('../images/nbalogo.jpg');
+}
+
+
+.Russel{
+  background-image: url("../images/RusswelWest.png")
+}
+
+.Steph{
+  background-image:url("../images/stephCurry.png")
+}
+
+.Lebron{
+  background-image: url("../images/lebronJames.png")
+}
+
+.Harden{
+  background-image: url("../images/Jamesharden.png")
+}
+
+.Davis{
+  background-image:  url("../images/AnthonyDavis.png")
+}
+
+.Giannis{
+  background-image: url("../images/Giannis.png")
+}
+
+.zion{
+  background-image: url("../images/zion.png")
+}
+
+.kawhi{
+  background-image: url("../images/kawhi.png")
+}
+
+.Kd{
+  background-image: url("../images/kevindurant.png")
+}
+
+.unclickable{
+  pointer-events: none;
+}
+.hidden {
+  display: none;
+
+}
+
+th {
+  text-decoration: underline
+}
+
+table{
+  background-color:rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin: auto;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande'
+}
+
+input{
+  background-color: grey;
+}
+
+.playAgain, .enterScore{
+  border: 1px solid black;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1em;
+  margin-top: 2%;
+}
+
+.enterScore{
+  margin-top: 0%;
+}
+
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+/* Portrait */
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait)
+   {
+    html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .gamezone{
+      height: 79vh;
+      width: 90%;
+      margin-left: 4%;
+    }
+    .container{
+      height: 14%;
+      width: 32%;
+    }
+    .stats{
+      font-size: 2rem;
+      margin-left: 17%;
+      /* height: 6vh; */
+      width: 64vw;
+      margin-top: 3%;
+    }
+    .name{
+      height: 7vh;
+    }
+    .back, .front{
+      border: blue 1px solid
+    }
+
+    .modal{
+      font-size: 4.5rem;
+      width: 90%
+    }
+
+    .modaltext{
+      margin-bottom: 42%;
+    }
+    #Button{
+      border-radius: 10px;
+      font-size: 4.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 375px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+   html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .gamezone{
+      height: 79vh;
+      margin-top: 4%
+    }
+    .container{
+      height: 25%;
+      width: 15%;
+    }
+    .stats{
+      font-size: 1rem;
+      margin-left: 17%;
+      /* height: 7vh; */
+      width: 64vw;
+    }
+    .name{
+      font-size: 3rem;
+      height: 3vh;
+    }
+    .back, .front{
+      border: blue 1px solid
+    }
+
+     .modal{
+       /* height: 36%; */
+      width: 42%;
+      font-size: 2.5rem;
+    }
+
+    .modaltext{
+      margin-bottom: 24%;
+    }
+
+    #Button{
+      border-radius: 10px;
+      font-size: 2.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: portrait)
+  and (-webkit-min-device-pixel-ratio: 1) {
+     html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .container{
+      height: 15%;
+      width: 32%;
+    }
+     .back, .front{
+      border: blue .5px solid
+    }
+
+    .name{
+      height: 8vh;
+    }
+
+    .stats{
+      width: 64vw;
+      font-size: 1.5rem;
+      margin-top: 2%;
+      margin-left: 17%;
+    }
+
+    .modal{
+      width: 68%;
+      font-size: 3.5rem;
+    }
+      .modaltext{
+      margin-bottom: 40%;
+    }
+
+    #Button{
+      font-size: 3.5rem;
+    }
+  }
+
+@media only screen
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (orientation: landscape)
+  and (-webkit-min-device-pixel-ratio: 1) {
+      html{
+      background-size: cover;
+      min-height: 100%;
+    }
+    .container{
+      height: 25%;
+      width: 15%;
+    }
+     .back, .front{
+      border: blue .5px solid
+    }
+
+    .name{
+      height: 8vh;
+    }
+
+    .stats{
+      width: 64vw;
+      font-size: 1.5rem;
+      margin-top: -2%;
+      margin-left: 17%;
+    }
+
+    .gamezone{
+      margin-top: 3%;
+      width: 100%;
+      margin-left: 0%;
+    }
+     /* .stats{
+       margin-top: -2%;
+       width: 64vw;
+       height: 8vh;
+     } */
+
+     .modal{
+       font-size: 2.5rem;
+       width: 56%;
+     }
+
+    .modaltext{
+      margin-bottom: 24%;
+    }
+     #Button{
+       font-size: 2.5rem;
+     }
+
+  }
