@@ -6,6 +6,9 @@ html{
   background-repeat: no-repeat;
 }
 
+#userName{
+  background-color: silver;
+}
 .name{
   text-align: center;
   background-color: transparent;
@@ -15,6 +18,7 @@ html{
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-shadow: 2px 2px black;
 }
+
 
 .stats{
   display: flex;
@@ -275,6 +279,7 @@ input{
     #userName{
       height: 2.5vh;
       width: 30vw;
+      font-size: 3rem;
     }
 
     #enterScore{
@@ -330,6 +335,7 @@ input{
      #userName{
       height: 4.5vh;
       width: 14vw;
+      font-size: 1rem;
     }
 
     #enterScore{
@@ -381,6 +387,7 @@ input{
     #userName{
       height: 2.5vh;
       width: 25vw;
+      font-size: 2rem;
     }
 
     #enterScore{
@@ -445,6 +452,7 @@ input{
       #userName{
       height: 3vh;
       width: 20vw;
+      font-size: 1.5rem;
     }
 
     #enterScore{
