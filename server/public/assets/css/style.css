@@ -271,6 +271,15 @@ input{
       border-radius: 10px;
       font-size: 4.5rem;
     }
+
+    #userName{
+      height: 2.5vh;
+      width: 30vw;
+    }
+
+    #enterScore{
+      font-size: 3rem;
+    }
   }
 
 @media only screen
@@ -318,6 +327,14 @@ input{
       border-radius: 10px;
       font-size: 2.5rem;
     }
+     #userName{
+      height: 4.5vh;
+      width: 14vw;
+    }
+
+    #enterScore{
+      font-size: 1.5rem;
+    }
   }
 
 @media only screen
@@ -329,6 +346,7 @@ input{
       background-size: cover;
       min-height: 100%;
     }
+
     .container{
       height: 15%;
       width: 32%;
@@ -359,6 +377,15 @@ input{
     #Button{
       font-size: 3.5rem;
     }
+
+    #userName{
+      height: 2.5vh;
+      width: 25vw;
+    }
+
+    #enterScore{
+      font-size: 2rem;
+    }
   }
 
 @media only screen
@@ -369,6 +396,10 @@ input{
       html{
       background-size: cover;
       min-height: 100%;
+    }
+
+    h1{
+      font-size: 1.5em;
     }
     .container{
       height: 25%;
@@ -411,5 +442,12 @@ input{
      #Button{
        font-size: 2.5rem;
      }
+      #userName{
+      height: 3vh;
+      width: 20vw;
+    }
 
+    #enterScore{
+      font-size: 1.5rem;
+    }
   }

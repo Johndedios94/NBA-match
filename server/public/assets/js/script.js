@@ -150,7 +150,7 @@ function getScores(){
     var tableRow = $("<tr>")
     var rank = $("<th>").text("Rank");
     var name = $("<th>").text("Name");
-    var score = $("<th>").text("Score");
+    var score = $("<th>").text("Attempts");
     $(tableRow).append(rank, name, score);
     $(scoreTable).append(tableRow);
     var currentRank = 1;
