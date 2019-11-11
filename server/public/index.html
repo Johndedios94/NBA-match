@@ -1,46 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="name">NBA Memory Match</div>
-    </header>
-    <main class="gamezone">
-    </main>
-    <!--Enter Score Modal-->
-      <div id="submitScoreModal" class="modal hidden">
-        <div class="winningModal">
-          <h1>YOU WON!</h1>
-          <div>Submit your score!</div>
-            <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
-              Name: <input id="userName" type="text" name="fname">
-              <button id="enterScore" type="button">Submit</button>
-      <!-- <input id="enterScore" type="button" value="Submit"> -->
-            </form>
-          </div>
-        <!-- <button id="Button"> Reset Game</button> -->
-        </div>
-      </div>
-      <!--Display HighScore Modal-->
-      <div id="highScoreModal" class="modal hidden">
-      </div>
-      <div class="stats">
-        <div class="game">
-          Games Played:
-            <div id="GamesPlayedCount">0</div>
-        </div>
-        <div>
-          Attempts:
-            <div id="attemptCount"></div>
-        </div>
-        <div>
-          Accuracy:
-            <div id="AccuracyCount"></div>
-        </div>
-      </div>
-  </body>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="assets/js/script.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="name">NBA Memory Match</div>
+  </header>
+  <main class="gamezone">
+  </main>
+  <div id="submitScoreModal" class="modal hidden">
+    <div class="winningModal">
+      <h1>YOU WON!</h1>
+      <div>Submit your score!</div>
+      <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+        Name: <input id="userName" type="text" name="fname">
+        <button id="enterScore" type="button">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>
+  <div id="highScoreModal" class="modal hidden">
+  </div>
+  <div class="stats">
+    <div class="game">
+      Games Played:
+      <div id="GamesPlayedCount">0</div>
+    </div>
+    <div>
+      Attempts:
+      <div id="attemptCount"></div>
+    </div>
+    <div>
+      Accuracy:
+      <div id="AccuracyCount"></div>
+    </div>
+  </div>
+</body>
+
 </html>
