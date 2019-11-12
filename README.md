@@ -1,6 +1,6 @@
 # NBA Match
 
-A full stack NBA themed memory match game
+A full stack NBA themed memory match game where the user tries to match two like cards. In game statistics are updated live, and user can input their scores into a high scores table.
 
 
 ## Technologies Used
@@ -14,13 +14,8 @@ A full stack NBA themed memory match game
 ## Live Demo
 Try the game live at [nbamatch.johndedios.net](http://nbamatch.johndedios.net)
 
-## Features
-- Player can match two like cards
-- Player can track in game statistics
-- Player can input score into a high scores table
-
 ## Preview
-![NBA_match](server/public/assets/images/nbamatch.gif)
+![NBAmatch](server/public/assets/images/NBAmatch.gif)
 
 ## Initial Setup
 1. Clone this repository into your terminal
