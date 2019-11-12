@@ -19,6 +19,9 @@ Try the game live at [nbamatch.johndedios.net](http://nbamatch.johndedios.net)
 - Player can track in game statistics
 - Player can input score into a high scores table
 
+## Preview
+![NBA Match](server/public/assets/images/memoryMatchportfoliogif.gif)
+
 ## Initial Setup
 1. Clone this repository into your terminal
      ```shell
