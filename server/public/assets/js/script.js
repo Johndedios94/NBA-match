@@ -3,7 +3,7 @@ $(document).ready(intializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
@@ -48,8 +48,6 @@ function Reset() {
   randomImages = [];
   intializeApp();
   clickable = false;
-
-
 }
 
 function handleCardClick(event) {
@@ -74,8 +72,10 @@ function handleCardClick(event) {
       secondCardClicked = null;
       if (matches === max_matches) {
         clickable = true;
-        $("#submitScoreModal").removeClass("hidden")
-        $("#enterScore").on("click", submitScore)
+        setTimeout(function () {
+          $("#submitScoreModal").removeClass("hidden")
+          $("#enterScore").on("click", submitScore)
+        }, 1000);
       }
     } else {
       clickable = true;
@@ -128,12 +128,12 @@ function submitScore() {
     "score": score
   }
   var scoreData = [];
-  scoreData.push($.post("/api/addScore.php", JSON.stringify(highScoreData)));
+  scoreData.push($.post("nba_match/server/public/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
 }
 
 function getScores() {
-  $.get("/api/getHighScores.php", function (data) {
+  $.get("nba_match/server/public/api/getHighScores.php", function (data) {
     $("#submitScoreModal").addClass("hidden");
     $("#highScoreModal").removeClass("hidden");
     var scoreTable = $("<table>");
