@@ -3,7 +3,7 @@ $(document).ready(intializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
@@ -128,12 +128,12 @@ function submitScore() {
     "score": score
   }
   var scoreData = [];
-  scoreData.push($.post("nba_match/server/public/api/addScore.php", JSON.stringify(highScoreData)));
+  scoreData.push($.post("/api/addScore.php", JSON.stringify(highScoreData)));
   Promise.allSettled(scoreData).then(getScores);
 }
 
 function getScores() {
-  $.get("nba_match/server/public/api/getHighScores.php", function (data) {
+  $.get("/api/getHighScores.php", function (data) {
     $("#submitScoreModal").addClass("hidden");
     $("#highScoreModal").removeClass("hidden");
     var scoreTable = $("<table>");
