@@ -3,7 +3,7 @@ $(document).ready(intializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
@@ -36,6 +36,10 @@ function generateCards() {
     container.append(cards);
     $(".gamezone").append(container)
   }
+}
+
+function overRide(){
+  matches = 9;
 }
 
 function Reset() {
@@ -114,11 +118,11 @@ function displayStats() {
   $("#AccuracyCount").text(accurate);
 }
 
-function resetStats() {
-  matches = null;
-  attempts = null;
-  gameCount++
-}
+// function resetStats() {
+//   matches = null;
+//   attempts = 1;
+//   gameCount++
+// }
 
 function submitScore() {
   var score = $("#attemptCount").text()
