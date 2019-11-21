@@ -38,13 +38,9 @@ function generateCards() {
   }
 }
 
-function overRide(){
-  matches = 9;
-}
-
 function Reset() {
   matches = null;
-  attempts = null;
+  attempts = 0;
   gameCount++
   displayStats()
   $(".gamezone").empty();
