@@ -114,12 +114,6 @@ function displayStats() {
   $("#AccuracyCount").text(accurate);
 }
 
-// function resetStats() {
-//   matches = null;
-//   attempts = 1;
-//   gameCount++
-// }
-
 function submitScore() {
   var score = $("#attemptCount").text()
   var name = $("#userName").val();
