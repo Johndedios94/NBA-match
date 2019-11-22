@@ -3,7 +3,7 @@ $(document).ready(intializeApp)
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = null;
-var max_matches = 1;
+var max_matches = 9;
 var attempts = 0;
 var gameCount = 0;
 var accuracy = null;
