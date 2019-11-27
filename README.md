@@ -12,7 +12,7 @@ A full stack NBA themed memory match game where the user tries to match two like
 - CSS3
 
 ## Live Demo
-Try the game live at [nbamatch.johndedios.net](http://nbamatch.johndedios.net)
+Try the game live at [nbamatch.johndedios.net](https://nbamatch.johndedios.net)
 
 ## Preview
 ![NBAmatch](server/public/assets/images/NBAmatch.gif)
